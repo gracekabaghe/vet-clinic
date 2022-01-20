@@ -130,9 +130,11 @@ UPDATE animals
 SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') 
 WHERE name = 'Boarmon';
 
+-- Modify your inserted animals so it includes the species_id value:
+-- If the name ends in "mon" it will be Digimon
+-- All other animals are Pokemon
+
 BEGIN;
-UPDATE animals SET species = 'Digimon' WHERE name LIKE '%mon';
-UPDATE animals SET species = 'Pokemon' WHERE species IS NULL;
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 1 WHERE species_id IS NULL ;
 COMMIT;
-
-
