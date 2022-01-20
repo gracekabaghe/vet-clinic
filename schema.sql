@@ -43,4 +43,19 @@ ALTER TABLE animals
     FOREIGN KEY(owners_id) 
     REFERENCES owners(id);
 
+CREATE TABLE vets(
+  id                 INT GENERATED ALWAYS AS IDENTITY,
+  name               VARCHAR(60),
+  age                INT,
+  date_of_graduation DATE,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE specializations (
+    species_id INT,
+    vets_id INT,
+    CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id),
+    CONSTRAINT fk_vets FOREIGN KEY(vets_id) REFERENCES vets(id)
+);
+
     
