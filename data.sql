@@ -130,4 +130,9 @@ UPDATE animals
 SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') 
 WHERE name = 'Boarmon';
 
+BEGIN;
+UPDATE animals SET species = 'Digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species = 'Pokemon' WHERE species IS NULL;
+COMMIT;
+
 
