@@ -138,3 +138,25 @@ BEGIN;
 UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
 UPDATE animals SET species_id = 1 WHERE species_id IS NULL ;
 COMMIT;
+
+-- insert vets
+
+INSERT INTO vets 
+(name, age, date_of_graduation) 
+VALUES
+    ('William Tatcher', 45, '2000-04-23'); 
+
+INSERT INTO vets 
+(name, age, date_of_graduation) 
+VALUES
+('Maisy Smith', 26, '2019-01-17');
+
+INSERT INTO vets 
+(name, age, date_of_graduation) 
+VALUES
+('Stephanie Mendez', 64, '04-05-1981');
+
+INSERT INTO vets 
+(name, age, date_of_graduation) 
+VALUES
+('Jack Harkness', 38, '08-06-2008');
